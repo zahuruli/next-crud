@@ -15,7 +15,9 @@ export default function Home() {
 
   const getAllData = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/topics`);
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/topics`
+      );
 
       if (data.success) {
         setPostData(data.topics);
@@ -49,7 +51,7 @@ export default function Home() {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:3000/api/topics/${id}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/topics/${id}`
       );
 
       if (data.success) {

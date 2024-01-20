@@ -15,7 +15,7 @@ const Page = ({ params }) => {
   const getAllData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3000/api/topics/${id}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/topics/${id}`
       );
 
       if (data.success) {
@@ -42,7 +42,7 @@ const Page = ({ params }) => {
   const onFinish = async (values) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/topics/${id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/topics/${id}`,
         { ...values },
         {
           cache: "no-store",
