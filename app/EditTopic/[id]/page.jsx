@@ -14,9 +14,7 @@ const Page = ({ params }) => {
   //get single data:
   const getAllData = async () => {
     try {
-      const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/topics/${id}`
-      );
+      const { data } = await axios.get(`api/topics/${id}`);
 
       if (data.success) {
         form1.setFieldsValue({
