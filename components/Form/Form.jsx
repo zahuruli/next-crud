@@ -9,7 +9,7 @@ const FormComponent = ({ handleOk, getAllData }) => {
   const onFinish = async (values) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3000/api/topics`,
+        `api/topics`,
         { ...values },
         {
           cache: "no-store",
