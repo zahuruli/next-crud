@@ -14,7 +14,7 @@ const Page = ({ params }) => {
   //get single data:
   const getAllData = async () => {
     try {
-      const { data } = await axios.get(`api/topics/${id}`);
+      const { data } = await axios.get(`../api/topics/${id}`);
 
       if (data.success) {
         form1.setFieldsValue({
@@ -40,7 +40,7 @@ const Page = ({ params }) => {
   const onFinish = async (values) => {
     try {
       const { data } = await axios.put(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/topics/${id}`,
+        `../api/topics/${id}`,
         { ...values },
         {
           cache: "no-store",
