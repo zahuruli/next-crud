@@ -6,7 +6,7 @@ import axios from "axios";
 import Toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const router = useRouter();
   const { id } = params;
   const [form1] = Form.useForm();
@@ -114,4 +114,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;

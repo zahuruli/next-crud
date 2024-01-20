@@ -72,7 +72,10 @@ export default function Home() {
             postData.length > 0 &&
             postData.map((d) => {
               return (
-                <div className="bg-gray-800 w-4/6 m-4 rounded-xl p-3 mx-auto flex justify-between">
+                <div
+                  key={d._id}
+                  className="bg-gray-800 w-4/6 m-4 rounded-xl p-3 mx-auto flex justify-between"
+                >
                   <div>
                     <h1 className="text-white text-xl">Title: {d.title}</h1>
                     <p className="text-gray-300">
